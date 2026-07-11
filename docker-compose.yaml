@@ -13,18 +13,18 @@ services:
       MONGO_URL: "mongodb://mongodb:27017/catalogue"
     depends_on:
     - mongodb
-  # frontend:
-  #   build: ./frontend
-  #   image: joindevops/frontend:v1
-  #   container_name: frontend
-  #   ports:
-  #   - "80:80"
-  #   depends_on:
-  #   - catalogue
-  #   - user
-  #   - cart
-  #   - shipping
-  #   - payment
+  frontend:
+    build: ./frontend
+    image: joindevops/frontend:v1
+    container_name: frontend
+    ports:
+    - "80:80"
+    depends_on:
+    - catalogue
+    - user
+    - cart
+    - shipping
+    - payment
   # user:
   #   build: ./user
   #   image: joindevops/user:v1
